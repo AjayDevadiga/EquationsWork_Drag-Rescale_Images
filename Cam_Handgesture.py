@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from PalmLandMarkDetection import HandDetector
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(cv2.CAP_V4L2)
 cap.set(3, 1280)
 cap.set(4, 720)
 
