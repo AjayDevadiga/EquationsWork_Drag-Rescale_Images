@@ -42,14 +42,16 @@ def CameraAction():
     process_status = "Unknown"
     try:
         if not request.method == "POST":
-            return
+            return process_status
         print(request.get_data().decode('UTF-8'))
         if request.get_data().decode('UTF-8') == "StartCamera":
             process_status = Cam_Handgesture.OpenCam_StartGesture_Recog(openCam_command=True)
+            return process_status
         elif request.get_data().decode('UTF-8') == "StopCamera":
             process_status = Cam_Handgesture.OpenCam_StartGesture_Recog(openCam_command=False)
             global frame
             frame = cv2.imread('static/image-5.jpg')
+            return process_status
     except:
         process_status = "Process Stopped"
     return process_status
