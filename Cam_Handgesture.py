@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from PalmLandMarkDetection import HandDetector
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("images/demo.mp4")
 cap.set(3, 1280)
 cap.set(4, 720)
 
@@ -65,7 +65,7 @@ def OpenCam_StartGesture_Recog(openCam_command):
 
             change_inSize = 0
             global cap
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture("images/demo.mp4")
             cap.set(3, 1280)
             cap.set(4, 720)
 
